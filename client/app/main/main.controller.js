@@ -5,14 +5,32 @@ angular.module('indiesoundsApp')
     
     $scope.sounds = [];
 
+    $scope.closed = true;
+
+    $scope.open = false;
+
+    var status = false;
+
     $scope.getAll = function() {
-      console.log('getting sounds');
       soundcloudService.getAll().then(function(response) {
         $scope.sounds = response.data;
-        var x = $scope.sounds;
-        console.log('This is x:', x);
       });
     };
 
     $scope.getAll();
+
+    $scope.playerToggle = function() {
+
+      if(status == false) {
+        $scope.open = true;
+
+        status = !status;
+      }
+      else {
+        $scope.open = false;
+
+        status = !status;
+      }
+    }
+
   });
