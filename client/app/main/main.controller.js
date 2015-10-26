@@ -2,7 +2,7 @@
 
 angular.module('indiesoundsApp')
   .controller('MainCtrl', function ($scope, soundcloudService) {
-    
+
     $scope.sounds = [];
 
     $scope.closed = true;
@@ -21,7 +21,7 @@ angular.module('indiesoundsApp')
 
     $scope.playerToggle = function() {
 
-      if(status == false) {
+      if(status === false) {
         $scope.open = true;
 
         status = !status;
@@ -31,6 +31,6 @@ angular.module('indiesoundsApp')
 
         status = !status;
       }
-    }
+    };
 
   });

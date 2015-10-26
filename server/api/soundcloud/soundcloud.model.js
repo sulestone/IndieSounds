@@ -5,8 +5,9 @@ var mongoose = require('mongoose'),
 
 var SoundcloudSchema = new Schema({
   name: String,
-  info: String,
-  active: Boolean
+  title: String,
+  url: String,
+  profile: { type: mongoose.Schema.Types.ObjectId, ref: 'Profile' }
 });
 
 module.exports = mongoose.model('Soundcloud', SoundcloudSchema);
