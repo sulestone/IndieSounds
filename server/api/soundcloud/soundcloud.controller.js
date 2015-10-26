@@ -2,13 +2,20 @@
 
 var _ = require('lodash');
 var Soundcloud = require('./soundcloud.model');
+var SC = require('node-soundcloud');
+var clientId = '853fdb79a14a9ed748ec9fe482e859dd';
 
+SC.init({
+    id: clientId
+});
 // Get list of soundclouds
 exports.index = function(req, res) {
-  Soundcloud.find(function (err, soundclouds) {
-    if(err) { return handleError(res, err); }
-    return res.status(200).json(soundclouds);
-  });
+  SC.get('/tracks', {q: 'beyonce'},
+      function(err, track) {        
+        if(err) { return handleError(res, err); }
+        console.log('\n\ntrack.length:', track.length);
+        return res.status(200).json(track);
+        });
 };
 
 // Get a single soundcloud

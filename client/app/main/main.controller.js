@@ -1,27 +1,18 @@
 'use strict';
 
 angular.module('indiesoundsApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
-    $scope.awesomeThings = [];
+  .controller('MainCtrl', function ($scope, soundcloudService) {
+    
+    $scope.sounds = [];
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-      socket.syncUpdates('thing', $scope.awesomeThings);
-    });
-
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
+    $scope.getAll = function() {
+      console.log('getting sounds');
+      soundcloudService.getAll().then(function(response) {
+        $scope.sounds = response.data;
+        var x = $scope.sounds;
+        console.log('This is x:', x);
+      });
     };
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
-
-    $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('thing');
-    });
+    $scope.getAll();
   });
