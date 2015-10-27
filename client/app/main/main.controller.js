@@ -30,7 +30,8 @@ angular.module('indiesoundsApp')
         audioPlayer.play();
         $scope.playerToggle(index);
       }
-    }
+    };
+    
     $scope.playerToggle = function(index) {
       if(status === false) {
         $scope.open = true;
