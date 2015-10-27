@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
 
 var ConcertsSchema = new Schema({
   location: String,
-  date: Date,
+  date: String,
   time: String,
   profile: { type: mongoose.Schema.Types.ObjectId, ref: 'Profile' }
 });
