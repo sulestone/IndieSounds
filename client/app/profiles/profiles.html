@@ -1,3 +1,9 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
 <div class="col-md-12">
-This is the profiles view.
+<h1>Profiles Main Page</h1>
+  <h3>Artist Name:  {{ profiles[0].name }} </h3>
+  <br>
+  {{ profiles[0].location }}
+  {{ profiles[0].biography }}
+  {{ profiles[0].genres }}
 </div>
