@@ -4,9 +4,9 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var ConcertsSchema = new Schema({
-  username: String,
-  title: String,
-  url: String,
+  location: String,
+  date: Date,
+  time: String,
   profile: { type: mongoose.Schema.Types.ObjectId, ref: 'Profile' }
 });
 

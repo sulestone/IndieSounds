@@ -14,8 +14,9 @@ angular.module('indiesoundsApp')
           password: $scope.user.password
         })
         .then( function() {
-          // Logged in, redirect to home
-          $location.path('/');
+          // Logged in, redirect to user profile page
+          // will need to add a path to go to users profile page - user.profile.id
+          $location.path('/profiles');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;
