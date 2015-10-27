@@ -8,10 +8,10 @@ var clientId = '853fdb79a14a9ed748ec9fe482e859dd';
 SC.init({
     id: clientId
 });
-// Get list of soundclouds
+// Get list of information pulled from soundcloud 
 exports.index = function(req, res) {
   SC.get('/tracks', {q: 'beyonce'},
-      function(err, track) {        
+      function(err, track) {
         if(err) { return handleError(res, err); }
         console.log('\n\ntrack.length:', track.length);
         return res.status(200).json(track);

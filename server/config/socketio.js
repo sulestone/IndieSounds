@@ -18,6 +18,8 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/profiles/profiles.socket').register(socket);
+  require('../api/concerts/concerts.socket').register(socket);
   require('../api/soundcloud/soundcloud.socket').register(socket);
   require('../api/thing/thing.socket').register(socket);
 }
