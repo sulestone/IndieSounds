@@ -2,6 +2,10 @@
 
 var _ = require('lodash');
 var Concerts = require('./concerts.model');
+// connecting profiles model to the concerts model 
+var Profile = require('../profiles/profiles.model');
+
+
 
 // Get list of concertss
 exports.index = function(req, res) {
