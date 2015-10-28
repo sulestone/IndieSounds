@@ -1,0 +1,27 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Update Profile</h1>
+    </div>
+    <div class="col-sm-12">
+      <form class="form" name="form" ng-submit="updateProfile(form)" novalidate>
+
+        <div class="form-group">
+        <label>Name</label>
+		<input type="text" class="form-control" ng-model="profile.name"/>
+        <label>Location</label>
+		<input type="text" class="form-control" ng-model="profile.name"/>
+        <label>Genres</label>
+		<input type="checkbox" class="form-control" ng-model="profile.name"/>
+        <label>Profile Picture</label>
+		<input type="text" class="form-control" ng-model="profile.name"/>
+		</div>
+
+		<br>
+        <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
+      </form>
+    </div>
+  </div>
+</div>

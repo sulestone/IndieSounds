@@ -3,10 +3,11 @@
 angular.module('indiesoundsApp')
   .controller('SettingsCtrl', function ($scope, User, Auth) {
     $scope.errors = {};
-
+    console.log('This is: ' + $scope.user);
     $scope.changePassword = function(form) {
       $scope.submitted = true;
       if(form.$valid) {
+        console.log('This is: ' + $scope.user);
         Auth.changePassword( $scope.user.oldPassword, $scope.user.newPassword )
         .then( function() {
           $scope.message = 'Password successfully changed.';
