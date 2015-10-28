@@ -10,7 +10,7 @@ angular.module('indiesoundsApp')
     $scope.open = false;
 
     $scope.spinning = false;
-    $scope.play = "ion-ios7-play";
+    $scope.play = 'ion-ios7-play';
 
     var status = false;
     var musicState;
@@ -23,9 +23,9 @@ angular.module('indiesoundsApp')
     };
 
     $scope.getAll();
-    
-    // if audioPlayfalse call playMusic, if true call playerToggle
 
+
+    // if audioPlayfalse call playMusic, if true call playerToggle
     $scope.playMusic = function(index) {
       if (index !== musicState) {
         musicState = index;
@@ -34,18 +34,18 @@ angular.module('indiesoundsApp')
         $scope.playerToggle(index);
       }
     };
-    
+
     $scope.playerToggle = function(index) {
       if(status === false) {
         $scope.open = true;
         $scope.spinning = true;
         status = !status;
-        $scope.play = "ion-ios7-pause"; 
+        $scope.play = 'ion-ios7-pause';
       }
       else {
         $scope.open = false;
         $scope.spinning = false;
-        $scope.play = "ion-ios7-play";
+        $scope.play = 'ion-ios7-play';
         audioPlayer.pause();
 
         status = !status;
