@@ -11,7 +11,7 @@
 
 <header class="hero-unit" id="banner">
   <div class="container">
-    <h1>Concerts Listing (Index Page)</h1>
+    <h1>Concerts Index</h1>
     <hr>
   </div>
 </header>
@@ -22,4 +22,12 @@
   <h3>Where:  {{ concerts[0].location }} </h4>
   <h3>Date:  {{ concerts[0].date }} </h4>
   <h3>Time:  {{ concerts[0].time }} </h4>
+</div>
+
+<div class="col-md-12">
+  <section ng-controller="ConcertsCtrl as concerts"
+
+    <form ng-submit="awards.createNewConcert()">
+      <label for="new-concert-name">New Concert Name:</label>
+      <input type="text" id="new-concert-name" ng-model="concerts"
 </div>

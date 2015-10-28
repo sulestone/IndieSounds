@@ -172,3 +172,19 @@ body {
   color: #3498db;
   text-decoration: none;
 }
+
+#slides_control > div{
+  height: 200px;
+}
+img{
+  margin:auto;
+  width: 700px;
+  height: 450px;
+}
+#slides_control {
+  position:relative;
+  width: 900px;
+  left:50%;
+  top:20px;
+ margin-left:-200px;
+}
