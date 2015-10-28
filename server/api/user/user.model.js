@@ -10,7 +10,7 @@ var UserSchema = new Schema({
   name: String,
   email: { type: String, lowercase: true },
   // adding refence to user's profile!!
-  userProfile: { type: mongoose.Schema.Types.ObjectId, ref: 'Profiles' },
+  myProfile: { type: mongoose.Schema.Types.ObjectId, ref: 'Profiles' },
   role: {
     type: String,
     default: 'user'

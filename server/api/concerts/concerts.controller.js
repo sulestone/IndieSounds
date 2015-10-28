@@ -7,11 +7,11 @@ var Profile = require('../profiles/profiles.model');
 
 
 
-// Get list of concertss
+// Get list of concerts
 exports.index = function(req, res) {
-  Concerts.find(function (err, concertss) {
+  Concerts.find(function (err, concerts) {
     if(err) { return handleError(res, err); }
-    return res.status(200).json(concertss);
+    return res.status(200).json(concerts);
   });
 };
 
