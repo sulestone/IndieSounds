@@ -23,9 +23,9 @@ angular.module('indiesoundsApp')
     };
 
     $scope.getAll();
-    console.log($scope.all);
-    // if audioPlayfalse call playMusic, if true call playerToggle
 
+
+    // if audioPlayfalse call playMusic, if true call playerToggle
     $scope.playMusic = function(index) {
       if (index !== musicState) {
         musicState = index;

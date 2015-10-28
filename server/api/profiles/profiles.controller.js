@@ -12,11 +12,11 @@ function findProfileById(user, id) {
   });
 }
 
-// Get list of profiless
+// Get list of profiles
 exports.index = function(req, res) {
-  Profiles.find(function (err, profiless) {
+  Profiles.find(function (err, profiles) {
     if(err) { return handleError(res, err); }
-    return res.status(200).json(profiless);
+    return res.status(200).json(profiles);
   });
 };
 
@@ -55,7 +55,8 @@ exports.update = function(req, res) {
     if (err) { return handleError(res, err); }
     if(!user) { return res.status(404).send('Not Found'); }
     var userinfo = findProfileById(user, req.params.id); 
-    _.merge(profiles, req.body);
+    console.log(req.body);
+    _.merge(userinfo, req.body);
     user.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.status(200).json(profiles);
