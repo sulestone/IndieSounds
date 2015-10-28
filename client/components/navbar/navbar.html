@@ -25,16 +25,14 @@
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">Logout</a>
         </li>
         <li>
-          <div class="btn-group" >
-            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="btn-group" ng-class='{open: open}' style="margin-top: 10px">
+            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" ng-click='open=!open'>
               Menu <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-              <li><a href="#">Concerts</a></li>
-              <li><a href="#">Profiles</a></li>
-              <li><a href="#">Add Music</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><a href="/concerts">Concerts</a></li>
+              <li><a href="/profiles">Profiles</a></li>
+              <li><a href="/soundcloud">Listen to Music</a></li>
             </ul>
           </div>
         </li>
