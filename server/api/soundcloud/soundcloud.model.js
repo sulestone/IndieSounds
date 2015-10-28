@@ -7,7 +7,7 @@ var SoundcloudSchema = new Schema({
   name: String,
   title: String,
   url: String,
-  profile: { type: mongoose.Schema.Types.ObjectId, ref: 'Profile' }
+  owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
 
 module.exports = mongoose.model('Soundcloud', SoundcloudSchema);

@@ -98,6 +98,7 @@ angular.module('indiesoundsApp')
        * @return {Object} user
        */
       getCurrentUser: function() {
+        console.log('currentUser:', JSON.stringify(currentUser));
         return currentUser;
       },
 

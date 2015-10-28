@@ -10,14 +10,19 @@ angular.module('indiesoundsApp')
   	return $http.get('/api/profiles');
   };
 
-  self.getMyProfile = function() {
-  	return $http.get('/api/users/me');
-  }
+  self.getMyProfile = function(profileid) {
+  	return $http.get('/api/profiles/' + profileid);
+  };
+
   self.add = function(profile) {
-  	return $http.post('/api/profiles', {profile: profile});
+  	return $http.post('/api/profiles', profile);
   };  
 
   self.update = function(profile) {
   	return $http.put('/api/profiles/' + profile._id, {profile: profile});
+  };
+
+  self.userUpdate = function(user) {
+    return $http.put('api/users/me', {user: user});
   };
 });

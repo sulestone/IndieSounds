@@ -31,33 +31,27 @@ exports.show = function(req, res) {
 
 // Creates a new profiles in the DB.
 exports.create = function(req, res) {
-  var UserId = req.user._id;
-  User.findById(userId, function(err, user) {
-    if (err) { return handleError(res, err); }
-    if (!user) { return res.status(404).send('Not Found'); }
-    var userinfo = {
-      name: req.body.name,
-      location: req.body.location,
-      genres: req.body.genres,
-      biography: req.body.biography
-    };
-  user.userProfile.push(new Profile(userinfo));
-  user.save(function() {
-    return res.status(201).json(profiles);
+  Profiles.create(req.body, function(err, profile) {
+    if(err) { return handleError(res, err); }
+    var userId = req.user._id;
+    User.findById(userId, function (err, user) {
+      user.myProfile = profile;
+      user.save(function(err) {
+        if(err) { return handleError(res, err); }
+        return res.status(201).json(profile);
+      });
     });
   });
 };
 
 // Updates an existing profiles in the DB.
 exports.update = function(req, res) {
-    var UserId = req.user._id;
-    User.findById(userId, function(err, user) {
+  if(req.body._id) { delete req.body._id; }
+  Profiles.findById(req.params.id, function (err, profiles) {
     if (err) { return handleError(res, err); }
-    if(!user) { return res.status(404).send('Not Found'); }
-    var userinfo = findProfileById(user, req.params.id); 
-    console.log(req.body);
-    _.merge(userinfo, req.body);
-    user.save(function (err) {
+    if(!profiles) { return res.status(404).send('Not Found'); }
+    var updated = _.merge(profiles, req.body);
+    updated.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.status(200).json(profiles);
     });

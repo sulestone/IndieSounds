@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('indiesoundsApp')
-  .controller('LoginCtrl', function ($scope, Auth, $location, $window) {
+  .controller('LoginCtrl', function ($scope, Auth, $location, $window, $http) {
     $scope.user = {};
     $scope.errors = {};
 
@@ -16,7 +16,10 @@ angular.module('indiesoundsApp')
         .then( function() {
           // Logged in, redirect to user profile page
           // will need to add a path to go to users profile page - user.profile.id
-          $location.path('/profiles');
+          Auth.getCurrentUser().$promise.then(function(currentUser) {
+            console.log('currentUser.name:', currentUser.name);
+            $location.path('/profiles/' + currentUser.myProfile);
+          });
         })
         .catch( function(err) {
           $scope.errors.other = err.message;
@@ -27,4 +30,5 @@ angular.module('indiesoundsApp')
     $scope.loginOauth = function(provider) {
       $window.location.href = '/auth/' + provider;
     };
+
   });

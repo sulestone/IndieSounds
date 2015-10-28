@@ -16,7 +16,7 @@ angular.module('indiesoundsApp')
         })
         .then( function() {
           // Account created, redirect to profile
-          $location.path('/profile');
+          $location.path('/newprofile');
         })
         .catch( function(err) {
           err = err.data;

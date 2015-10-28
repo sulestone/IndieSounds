@@ -10,6 +10,7 @@ var router = express.Router();
 // A user can search and view others profile
 router.get('/', controller.index);
 router.get('/:id', controller.show);
+
 // A user has to be logged in to do the following to their profile
 router.post('/',      auth.isAuthenticated(), controller.create);
 router.put('/:id',    auth.isAuthenticated(), controller.update);

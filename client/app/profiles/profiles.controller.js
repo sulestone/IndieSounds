@@ -4,12 +4,10 @@ angular.module('indiesoundsApp')
   .controller('ProfilesCtrl', function ($scope, profilesServices) {
     $scope.message = 'Hello';
 
-$scope.getMyProfile = function() {
-	profilesServices.getMyProfile().then(function(response){
-		$scope.myProfile = response.data;
-		console.log($scope.myProfile);
+	profilesServices.getAll().then(function(response){
+		$scope.allProfiles = response.data;
+		console.log($scope.allProfiles);
 	});
-};
-$scope.getMyProfile();
+
 
 });
