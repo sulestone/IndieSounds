@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('indiesoundsApp')
-   .controller('NewConcertCtrl', function($scope, $stateParams, Auth, concertsServices) {
+   .controller('NewConcertCtrl', function($scope, $stateParams, Auth, concertsService) {
 
        Auth.getCurrentUser().$promise.then(function(currentUser) {
            $scope.userid = currentUser._id;
@@ -17,8 +17,8 @@ angular.module('indiesoundsApp')
                time: $scope.newTime,
                owner: $scope.userid
            };
-           console.log("this is concert" + JSON.stringify(concert));
-           concertsServices.add(concert).then(function(res) {
+           console.log('this is concert' + JSON.stringify(concert));
+           concertsService.add(concert).then(function(res) {
                console.log('your profle has been added.:' + JSON.stringify(res.data));
            });
        };
