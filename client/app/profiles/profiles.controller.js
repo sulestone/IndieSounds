@@ -8,6 +8,4 @@ angular.module('indiesoundsApp')
 		$scope.allProfiles = response.data;
 		console.log($scope.allProfiles);
 	});
-
-
 });
