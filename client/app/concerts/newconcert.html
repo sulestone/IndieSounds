@@ -1,1 +1,8 @@
-newconcert.html
+<div ng-include="'components/navbar/navbar.html'"></div>
+<form>
+  Name  <input type="text" ng-model="newConcertName" /><br>
+  Location  <input type="text" ng-model="newConcertLocation" /><br>
+  Date  <input type="text" ng-model="newConcertDate" /><br>
+  Time  <input type="text" ng-model="newConcertTime" /><br>
+  <button type="submit" class="btn btn-primary" ng-click="add()">Add New</button>
+</form>
