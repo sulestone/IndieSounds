@@ -1,17 +1,8 @@
-<div>I'm Here!!!</div>
-
-<form ng-submit="add()">
-    <label>Name:
-      <input type="text" ng-model="newName">
-    </label>
-    <label>Location:
-      <input type="text" ng-model="newLocation">
-    </label>
-    <label>Genres:
-      <input type="text" ng-model="newGenres">
-    </label>
-    <label>Bio:
-      <input type="text" ng-model="newBio">
-    </label>
-    <button type="submit">submit</button>
-  </form>
+<div ng-include="'components/navbar/navbar.html'"></div>
+<form>
+  Name  <input type="text" ng-model="newProfileName" /><br>
+  Location  <input type="text" ng-model="newProfileLocation" /><br>
+  Genres  <input type="text" ng-model="newProfileGenres" /><br>
+  Biography  <input type="text" ng-model="newProfileBiography" /><br>
+  <button type="submit" class="btn btn-primary" ng-click="add()">Add New</button>
+</form>

@@ -1,17 +1,11 @@
 'use strict';
 
 angular.module('indiesoundsApp')
-  .controller('ConcertsCtrl', function ($scope) {
+  .controller('ConcertsCtrl', function ($scope, concertsService) {
     $scope.message = 'Hello';
+
+    concertsService.getAll().then(function(response) {
+      $scope.concerts = response.data;
+    });
   });
 
-  function ConcertsCtrl() {
-    this.newConcert = {};
-    this.concerts = [];
-    this.createNewConcert = createNewConcert;
-
-    function createNewConcert() {
-      this.concerts.push(this.newConcert);
-      this.newConcert = {};
-    }
-  }
