@@ -14,7 +14,8 @@
     "angular-socket-io": "~0.6.0",
     "angular-ui-router": "~0.2.15",
     "angular-gravatar": "~0.4.1",
-    "bootswatch-scss": "~3.2.0"
+    "bootswatch-scss": "~3.2.0",
+    "bootswatch-dist": "3.3.5-slate"
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",
