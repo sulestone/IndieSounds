@@ -1,5 +1,4 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
-<head>
+<html ng-controller="HeaderCtrl">
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
@@ -7,15 +6,3 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-messages.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-</head>
-
-<body>
-  <div class="well">
-    <h2>Concert Listing Information</h2>
-    <hr>
-    <h4><strong>Concert Name:  {{ concert.name }}</strong></h4>
-    <h4>Location: {{ concert.location }}</h4>
-    <h4>Date: {{ concert.date }}</h4>
-    <h4>Time: {{ concert.time }}</h4>
-  </div>
-</body>
