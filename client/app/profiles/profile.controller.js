@@ -3,7 +3,7 @@
 angular.module('indiesoundsApp')
 .controller('ProfileCtrl', function ($scope, $stateParams, Auth, profilesServices) {
 
-	
+	$scope.email = Auth.getCurrentUser().email;
   // var currentUser = Auth.getCurrentUser();
   // var profileId = currentUser.myProfile;
   var profileId = $stateParams.profileId;
