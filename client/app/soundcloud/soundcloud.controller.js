@@ -7,13 +7,15 @@ angular.module('indiesoundsApp')
 
     $scope.closed = true;
 
-    $scope.open = false;
+    $scope.openCd = false;
+
+    $scope.active = null;
 
     $scope.spinning = false;
     $scope.play = 'ion-ios7-play';
 
     var status = false;
-    var musicState;
+    var musicState = 'new';
     var audioPlayer = false;
 
     $scope.getAll = function() {
@@ -27,23 +29,35 @@ angular.module('indiesoundsApp')
 
     // if audioPlayfalse call playMusic, if true call playerToggle
     $scope.playMusic = function(index) {
-      if (index !== musicState) {
-        musicState = index;
+      $scope.active = index;
+      if (musicState == 'new') {
+        console.log('new audio');
+        musicState = index; 
         audioPlayer = new Audio($scope.sounds[index].uri + '/stream?client_id=853fdb79a14a9ed748ec9fe482e859dd' );
-        audioPlayer.play();
-        $scope.playerToggle(index);
       }
+      else if(index !== musicState){
+        console.log('2nd or later audio');
+        musicState = index;
+        audioPlayer.pause();
+        audioPlayer = new Audio($scope.sounds[index].uri + '/stream?client_id=853fdb79a14a9ed748ec9fe482e859dd' );
+        status = false;
+        // audioPlayer.load();
+      }
+      $scope.playerToggle(index);
     };
 
     $scope.playerToggle = function(index) {
       if(status === false) {
-        $scope.open = true;
+        console.log('starting audio');
+        $scope.openCd = true;
         $scope.spinning = true;
         status = !status;
         $scope.play = 'ion-ios7-pause';
+        audioPlayer.play();
       }
       else {
-        $scope.open = false;
+        console.log('pausing audio');
+        $scope.openCd = false;
         $scope.spinning = false;
         $scope.play = 'ion-ios7-play';
         audioPlayer.pause();

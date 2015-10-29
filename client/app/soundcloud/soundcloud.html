@@ -1,6 +1,7 @@
+
 <div>
 <div ng-include="'components/navbar/navbar.html'"></div>
-    <header class="hero-unit" id="banner">
+    <header class="hero-unit" id="bannerr">
         <div class="container">
             <h1>'INDIESOUNDS!</h1>
         </div>
@@ -9,7 +10,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="sound" ng-repeat="sound in sounds">
-                    <div id="player" ng-class="{closed: closed, open-cd: open}">
+                    <div id="player" ng-class="{closed: closed, openCd: (openCd && $index == active) }">
                         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/154694/vinyl.png" alt="" id="record" ng-class="{spinning: spinning}" />
                         <div id="cover">
                             <img src="http://placekitten.com/g/250/250" width="250" height="250" alt="" id="artwork" />

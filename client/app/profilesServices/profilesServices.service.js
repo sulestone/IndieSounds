@@ -19,10 +19,11 @@ angular.module('indiesoundsApp')
   };  
 
   self.update = function(profile) {
-  	return $http.put('/api/profiles/' + profile._id, {profile: profile});
+  	return $http.put('/api/profiles/' + profile._id, profile);
   };
 
-  self.userUpdate = function(user) {
-    return $http.put('api/users/me', {user: user});
-  };
+  self.delete = function(profileid) {
+    console.log('we made it here');
+    return $http.delete('/api/profiles/' + profileid);
+  }
 });

@@ -23,7 +23,7 @@ angular.module('indiesoundsApp')
       })
       .state({
         name: 'profilesettings',
-        url: '/profiles/:id/edit',
+        url: '/profiles/edit/:profileId',
         templateUrl: 'app/profiles/profilesettings/profilesettings.html',
         controller: 'ProfileSetCtrl'
       });

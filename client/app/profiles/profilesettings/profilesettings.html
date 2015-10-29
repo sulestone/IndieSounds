@@ -6,21 +6,22 @@
       <h1>Update Profile</h1>
     </div>
     <div class="col-sm-12">
-      <form class="form" name="form" ng-submit="updateProfile(form)" novalidate>
+      <form class="form" name="form" ng-submit="updateProfile(myProfile)" novalidate>
 
         <div class="form-group">
         <label>Name</label>
-		<input type="text" class="form-control" ng-model="profile.name"/>
+		<input type="text" class="form-control" ng-model="myProfile.name"/>
         <label>Location</label>
-		<input type="text" class="form-control" ng-model="profile.name"/>
+		<input type="text" class="form-control" ng-model="myProfile.location"/>
         <label>Genres</label>
-		<input type="checkbox" class="form-control" ng-model="profile.name"/>
+		<input type="text" class="form-control" ng-model="myProfile.genres"/>
         <label>Profile Picture</label>
 		<input type="text" class="form-control" ng-model="profile.name"/>
 		</div>
 
 		<br>
         <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
+         <button class="btn btn-lg btn-primary" ng-click="deleteProfile(myProfile._id) ">Danger</button>
       </form>
     </div>
   </div>

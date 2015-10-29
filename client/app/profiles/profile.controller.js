@@ -8,9 +8,9 @@ angular.module('indiesoundsApp')
   // var profileId = currentUser.myProfile;
   var profileId = $stateParams.profileId;
 
+
   profilesServices.getMyProfile(profileId).then(function(response) {
 	$scope.myProfile = response.data;
 	console.log($scope.myProfile);
   });
-
 });

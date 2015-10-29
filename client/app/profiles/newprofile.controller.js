@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('indiesoundsApp')
-.controller('NewProfileCtrl', function ($scope, $stateParams, Auth, profilesServices) {
+.controller('NewProfileCtrl', function ($scope, $stateParams, Auth, profilesServices, $location) {
 
 	console.log('Im Alive and kicking');
 
