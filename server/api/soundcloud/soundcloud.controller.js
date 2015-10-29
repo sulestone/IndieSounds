@@ -10,7 +10,7 @@ SC.init({
 });
 // Get list of information pulled from soundcloud 
 exports.index = function(req, res) {
-  SC.get('/tracks', {q: 'beyonce'},
+  SC.get('/tracks', {q: 'adele'},
       function(err, track) {
         if(err) { return handleError(res, err); }
         console.log('\n\ntrack.length:', track.length);

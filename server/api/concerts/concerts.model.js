@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var ConcertsSchema = new Schema({
+  	name: String,
   	location: String,
   	date: Date,
   	time: String,
