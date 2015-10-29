@@ -19,9 +19,11 @@
 <div class="col-md-12">
   <h2>Concert name: </h3>
   <br>
-  <h3>Where:  {{ concerts[0].location }} </h4>
-  <h3>Date:  {{ concerts[0].date }} </h4>
-  <h3>Time:  {{ concerts[0].time }} </h4>
+  <div ng-repeat="concert in concerts">
+    <h3>Where:  {{ concert.location }} </h4>
+    <h3>Date:  {{ concert.date }} </h4>
+    <h3>Time:  {{ concert.time }} </h4>
+  </div>
 </div>
 
 <div class="col-md-12">
