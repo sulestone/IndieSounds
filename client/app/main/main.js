@@ -6,6 +6,12 @@ angular.module('indiesoundsApp')
       .state('main', {
         url: '/',
         templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
-      });
-  });
+        controller: 'MainCtrl',
+        onEnter: function($rootScope) {
+			$rootScope.theBackgroundImageUrl = '../assets/images/oldradio.jpg';
+    	},
+    	onExit: function($rootScope) {
+    		$rootScope.theBackgroundImageUrl = '';	
+    	}
+     });
+});
