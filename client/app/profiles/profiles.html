@@ -1,4 +1,16 @@
-<div>This is all profile page</div>
+<div ng-include="'components/navbar/navbar.html'"></div>
 
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h1>Indiesounds Profiles</h1>
+  </div>
 
-list all users and has a search bar
+  Search Profiles: <input ng-model="query">
+
+  <div class="panel-body" ng-repeat="profile in allProfiles">
+    <h3>Name: {{ profile.name }}</h3>
+    <h3>Location: {{ profile.name }}</h3>
+    <h3>Genre: {{ profile.genre }}</h3>
+    <h3>Biography: {{ profile.biography }}</h3> <br><hr>
+  </div>
+</div>
