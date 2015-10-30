@@ -25,5 +25,5 @@ angular.module('indiesoundsApp')
   self.delete = function(profileid) {
     console.log('we made it here');
     return $http.delete('/api/profiles/' + profileid);
-  }
+  };
 });

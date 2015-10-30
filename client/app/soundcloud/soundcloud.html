@@ -3,17 +3,28 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
     <header class="hero-unit" id="bannerr">
         <div class="container">
-            <h1>'INDIESOUNDS!</h1>
+            <h1>INDIESOUNDS!</h1>
         </div>
-    </header>
-    <div class="container">
+        
         <div class="row">
-            <div class="col-lg-12">
-                <div class="sound" ng-repeat="sound in sounds">
+        <div class="col-md-4 col-md-offset-4">
+        <label class="artlook">Artist Lookup</label>
+        <form class="form" name="form" ng-submit="getAll(artist.name)" novalidate>
+            <input class="form-control" type="text" ng-model="artist.name"/><br>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        </div>
+        </div>
+
+    <div class="list-group">
+            <div class="row">
+              <div class="sound" ng-repeat="sound in sounds">
+              <div class="">
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 playerlayout">
                     <div id="player" ng-class="{closed: closed, openCd: (openCd && $index == active) }">
                         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/154694/vinyl.png" alt="" id="record" ng-class="{spinning: spinning}" />
                         <div id="cover">
-                            <img src="http://placekitten.com/g/250/250" width="250" height="250" alt="" id="artwork" />
+                            <img src="{{ sound.artwork_url }}" width="250" height="250" alt="" id="artwork" />
                             <div id="trackInfos">
                                 <p class="now">NOW PLAYING</p>
                                 <p id="band">{{ sound.user.username}}</p>
@@ -23,9 +34,10 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- allow the album to switch between playing and not playing -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" />
-</div>
+</div>  

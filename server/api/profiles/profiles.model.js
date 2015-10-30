@@ -6,8 +6,8 @@ var mongoose = require('mongoose'),
 var ProfilesSchema = new Schema({
 	  name: String,
 	  location: String,
-	  genres: String,
-	  image: { profile: String, img: [] },
+	  artist: String,
+	  music: [],
 	  likes: [],
 	  biography: String,
 	  owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }

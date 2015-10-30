@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('indiesoundsApp')
-    .controller('ConcertCtrl', function($scope, $stateParams, Auth, concertsService) {
+    .controller('ConcertCtrl', function($scope) {
 
         $scope.hello = 'hello';
 

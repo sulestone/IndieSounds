@@ -4,7 +4,11 @@ angular.module('indiesoundsApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',
-      'link': '/'
+      'link': 'main'
+    },
+    {
+      'title': 'Listen to music',
+      'link': 'soundcloud'
     }];
 
     $scope.isCollapsed = true;

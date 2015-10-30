@@ -18,19 +18,21 @@ angular.module('indiesoundsApp')
     var musicState = 'new';
     var audioPlayer = false;
 
-    $scope.getAll = function() {
-      soundcloudService.getAll().then(function(response) {
+    
+
+    $scope.getAll = function(artist) {
+      soundcloudService.getAll(artist).then(function(response) {
         $scope.sounds = response.data;
       });
     };
 
-    $scope.getAll();
+    // $scope.getAll();
 
 
     // if audioPlayfalse call playMusic, if true call playerToggle
     $scope.playMusic = function(index) {
       $scope.active = index;
-      if (musicState == 'new') {
+      if (musicState === 'new') {
         console.log('new audio');
         musicState = index; 
         audioPlayer = new Audio($scope.sounds[index].uri + '/stream?client_id=853fdb79a14a9ed748ec9fe482e859dd' );
@@ -46,7 +48,7 @@ angular.module('indiesoundsApp')
       $scope.playerToggle(index);
     };
 
-    $scope.playerToggle = function(index) {
+    $scope.playerToggle = function() {
       if(status === false) {
         console.log('starting audio');
         $scope.openCd = true;

@@ -20,7 +20,7 @@ angular.module('indiesoundsApp')
         };
 
          $scope.deleteProfile = function (profileId) {
-            profilesServices.delete(profileId).then(function(response) {
+            profilesServices.delete(profileId).then(function() {
                 console.log('profile successfully deleted');
             });
         };

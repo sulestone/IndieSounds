@@ -1,6 +1,8 @@
 'use strict';
 
 var _ = require('lodash');
+var url = require('url');
+
 var Soundcloud = require('./soundcloud.model');
 var SC = require('node-soundcloud');
 var clientId = '853fdb79a14a9ed748ec9fe482e859dd';
@@ -10,7 +12,7 @@ SC.init({
 });
 // Get list of information pulled from soundcloud 
 exports.index = function(req, res) {
-  SC.get('/tracks', {q: 'adele'},
+  SC.get('/tracks', {q: req.params.artist},
       function(err, track) {
         if(err) { return handleError(res, err); }
         console.log('\n\ntrack.length:', track.length);
