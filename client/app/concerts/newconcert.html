@@ -1,23 +1,25 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="well well-lg">
-  <h1>Create Your New Concert</h1>
+  <h1>Create New Concert Listing</h1>
   <br>
-  <div class="form-group">
+  <div class="form-horizontal">
     <label class="control-label" for="inputDefault" ng-model="newConcertName">Name:</label>
-      <input type="text" class="form-control" id="inputDefault" /><br>
-      <div class="form-group" style=>
+      <input type="text" class="form-control" id="inputDefault"><br>
+      <div class="form-horizontal" style=>
         <label class="control-label" for="inputDefault" ng-model="newConcertLocation">Location:</label>
-        <input type="text" class="form-control" id="inputDefault">
-      </div>
-      <div class="form-group" style=>
-        <label class="control-label" for="inputDefault" ng-model="newConcertDate">Date:</label>
-        <input type="date" class="form-control" id="inputDefault">
-      </div>
-      <div class="form-group" style=>
-        <label class="control-label" for="inputDefault" ng-model="newConcertTime">Time:</label>
-        <input type="time" class="form-control" id="inputDefault">
+        <input type="text" class="form-control" id="inputDefault"><br>
       </div>
 
-    <button type="submit" class="btn btn-primary" ng-click="add()">Add New</button>
+      <div class="form-horizontal" style=>
+        <label class="control-label" for="inputDefault" ng-model="newConcertDate">Date:</label>
+        <input type="date" class="form-control" id="inputDefault"><br>
+      </div>
+
+      <div class="form-horizontal" style=>
+        <label class="control-label" for="inputDefault" ng-model="newConcertTime">Time:</label>
+        <input type="time" class="form-control" id="inputDefault"><br>
+      </div>
+
+    <button type="submit" class="btn btn-info" ng-click="add()">Add New Concert</button>
 </div>
