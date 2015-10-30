@@ -5,9 +5,10 @@
     <h1>Indiesounds Profiles</h1>
   </div>
 
-  Search Profiles: <input ng-model="query">
+  <label>Search Profiles: <input ng-model="query"></label>
+  <
 
-  <div class="panel-body" ng-repeat="profile in allProfiles">
+  <div class="panel-body" ng-repeat="profile in allProfiles | filter:query">
     <h3>Name: {{ profile.name }}</h3>
     <h3>Location: {{ profile.name }}</h3>
     <h3>Genre: {{ profile.genre }}</h3>
