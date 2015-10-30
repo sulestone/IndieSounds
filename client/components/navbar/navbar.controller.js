@@ -11,6 +11,11 @@ angular.module('indiesoundsApp')
       'link': 'soundcloud'
     }];
 
+    Auth.getCurrentUser().$promise.then(function(currentUser) {
+  		$scope.profile = currentUser.myProfile;
+  		console.log('$scope.userid is: ' + JSON.stringify($scope.userid));
+  	});
+
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
@@ -20,6 +25,11 @@ angular.module('indiesoundsApp')
       Auth.logout();
       $location.path('/login');
     };
+    $scope.profileSettings = function() {
+      $location.path('/profiles/edit/' + $scope.profile);
+      console.log('This is current user: ' + $scope.userid);
+    };
+
 
     $scope.isActive = function(route) {
       return route === $location.path();
