@@ -15,7 +15,7 @@ angular.module('indiesoundsApp')
     		$scope.profile = currentUser.myProfile;
   	  	console.log('$scope.userid is: ' + JSON.stringify($scope.userid));
   	  });
-    };
+    }
 
         $scope.isCollapsed = true;
         $scope.isLoggedIn = Auth.isLoggedIn;
