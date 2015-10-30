@@ -8,8 +8,6 @@ var ProfilesSchema = new Schema({
 	  location: String,
 	  artist: String,
 	  music: [],
-	  likes: [],
-	  biography: String,
 	  owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
 

@@ -6,12 +6,11 @@
   </div>
 
   <label>Search Profiles: <input ng-model="query"></label>
-  <
+
 
   <div class="panel-body" ng-repeat="profile in allProfiles | filter:query">
     <h3>Name: {{ profile.name }}</h3>
-    <h3>Location: {{ profile.name }}</h3>
-    <h3>Genre: {{ profile.genre }}</h3>
-    <h3>Biography: {{ profile.biography }}</h3> <br><hr>
+    <h3>Loction: {{ profile.location }}</h3>
+    <h3>Following artist: {{ profile.artist }}</h3>
   </div>
 </div>
