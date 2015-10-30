@@ -11,10 +11,12 @@ angular.module('indiesoundsApp')
       'link': 'soundcloud'
     }];
 
-    Auth.getCurrentUser().$promise.then(function(currentUser) {
-  		$scope.profile = currentUser.myProfile;
-  		console.log('$scope.userid is: ' + JSON.stringify($scope.userid));
-  	});
+    if (Auth.isLoggedIn()) {
+      Auth.getCurrentUser().$promise.then(function(currentUser) {
+    		$scope.profile = currentUser.myProfile;
+  	  	console.log('$scope.userid is: ' + JSON.stringify($scope.userid));
+  	  });
+    }
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
