@@ -1,25 +1,21 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
+<div class="well well-lg">
+  <h1>Create Your New Profile</h1>
+  <br>
+  <div class="form-horizontal">
+    <label class="control-label" for="inputDefault">Your Name?</label>
+      <input type="text" class="form-control" id="inputDefault ng-model="newName"" /><br>
+      <div class="form-horizontal" style=>
 
-Give the user the option to skip for now!!
+        <label class="control-label" for="inputDefault">Your City?</label>
+        <input type="text" class="form-control" id="inputDefault"  ng-model="newLocation"><br>
+      </div>
 
-<!-- Using angular assign to false to if user skips to prevent load on signin in -->
+      <div class="form-horizontal" style=>
+        <label class="control-label" for="inputDefault">An artist you love?</label>
+        <input type="text" class="form-control" id="inputDefault" ng-model="newArtist"><br>
+      </div>
 
-
-<form>
-  Name  <input type="text" ng-model="newName" /><br>
-  Location  <input type="text" ng-model="newLocation" /><br>
-  Genres  <input type="text" ng-model="newArtist" /><br>
-  Biography  <input type="text" ng-model="newBio" /><br>
-  <button type="submit" class="btn btn-primary" ng-click="add()">Add New</button>
-</form>
-
-<!-- <body ng-controller="UploadCtrl" >
-  <div flow-init
-       flow-name="uploader.flow"
-       flow-files-added="processFiles($files)">
-    <button flow-btn type="file">Upload Images</button>
-    <div ng-repeat="image in uploader.flow.files track by $index">
-      <span class="text">Blob image displayed with "flow-img"</span><img class="preview" flow-img="image"/><br>
-    </div>
-  </div> -->
+    <button type="submit" class="btn btn-lg btn-info" ng-click="add()">Create Profile!</button>
+</div>

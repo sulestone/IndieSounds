@@ -1,1 +1,18 @@
-concert.html - shows a single concert information
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<!-- <div class="container">
+  <h1>Concert Listing</h1>
+  <hr>
+</div>
+ -->
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h1>Concert Information</h1>
+  </div>
+  <div class="panel-body">
+    <h4><strong>Concert Name:  {{ concert.name }}</strong></h4>
+    <h4>Location: {{ concert.location }}</h4>
+    <h4>Date: {{ concert.date }}</h4>
+    <h4>Time: {{ concert.time }}</h4>
+  </div>
+</div>
