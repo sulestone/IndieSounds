@@ -4,18 +4,11 @@
     <div class="panel-heading">
     <h1>Concert Index</h1>
     </div>
+
     <div class="panel-body" ng-repeat="concert in concerts">
       <h3>Concert name: {{ concert.name }}</h3>
       <h3>Where:  {{ concert.location }} </h3>
       <h3>Date:  {{ concert.date }} </h3>
       <h3>Time:  {{ concert.time }} </h3><br><hr>
     </div>
-  </div>
-
-  <div class="col-md-12">
-    <section ng-controller="ConcertsCtrl as concerts"
-
-      <form ng-submit="awards.createNewConcert()">
-        <label for="new-concert-name">New Concert Name:</label>
-        <input type="text" id="new-concert-name" ng-model="concerts">
   </div>

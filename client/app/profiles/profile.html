@@ -1,7 +1,13 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h1>Profile Information</h1>
+  </div>
 
-This page to the profile information
-{{myProfile.name}}
-{{myProfile.location}}
-{{myProfile.genres}}
-{{myProfile.biography}}
+  <div class="panel-body">
+    <h4><strong>Profile Name: {{ myProfile.name }}</strong></h4>
+    <h4>Location: {{ myProfile.location }}</h4>
+    <h4>Genres: {{ myProfile.genres }}</h4>
+    <h4>Biography: {{ myProfile.biography }}</h4>
+  </div>
+</div>
