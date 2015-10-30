@@ -4,17 +4,17 @@
   <h1>Create Your New Profile</h1>
   <br>
   <div class="form-horizontal">
-    <label class="control-label" for="inputDefault" ng-model="newName">Your Name?</label>
-      <input type="text" class="form-control" id="inputDefault" /><br>
+    <label class="control-label" for="inputDefault">Your Name?</label>
+      <input type="text" class="form-control" id="inputDefault ng-model="newName"" /><br>
       <div class="form-horizontal" style=>
 
-        <label class="control-label" for="inputDefault" ng-model="newLocation">Your City?</label>
-        <input type="text" class="form-control" id="inputDefault"><br>
+        <label class="control-label" for="inputDefault">Your City?</label>
+        <input type="text" class="form-control" id="inputDefault"  ng-model="newLocation"><br>
       </div>
 
       <div class="form-horizontal" style=>
-        <label class="control-label" for="inputDefault" ng-model="newArtist">An artist you love?</label>
-        <input type="text" class="form-control" id="inputDefault"><br>
+        <label class="control-label" for="inputDefault">An artist you love?</label>
+        <input type="text" class="form-control" id="inputDefault" ng-model="newArtist"><br>
       </div>
 
     <button type="submit" class="btn btn-lg btn-info" ng-click="add()">Create Profile!</button>
