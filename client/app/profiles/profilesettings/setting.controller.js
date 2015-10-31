@@ -3,6 +3,8 @@
 angular.module('indiesoundsApp')
     .controller('ProfileSetCtrl', function ($scope, $stateParams, Auth, $location, profilesServices) {
 
+
+
         var profileId = $stateParams.profileId;
         console.log('this is profileid: ' + profileId);
 

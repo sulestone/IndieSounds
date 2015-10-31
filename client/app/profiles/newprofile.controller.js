@@ -9,9 +9,10 @@ angular.module('indiesoundsApp')
 
 	Auth.getCurrentUser().$promise.then(function(currentUser) {
 		$scope.userid = currentUser._id;
-		console.log('$scope.userid is: ' + JSON.stringify($scope.userid));
+		$scope.name = currentUser.name;
+		$scope.newName = $scope.name;
+		console.log('$scope.userid is: ' + JSON.stringify($scope.userid + ' ' + $scope.name));
 	});
-	
 
      
 	$scope.add = function() {
@@ -19,7 +20,7 @@ angular.module('indiesoundsApp')
     	    $scope.sounds = response.data;
 
 			var profile = {
-				name: $scope.newName,
+				name: $scope.name,
 				location: $scope.newLocation,
 				artist: $scope.newArtist,
 				biography: $scope.newBio,
