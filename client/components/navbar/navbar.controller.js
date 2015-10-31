@@ -11,10 +11,10 @@ angular.module('indiesoundsApp')
         }];
 
         $scope.profile = Auth.getCurrentUser().myProfile;
-            // Auth.getCurrentUser().$promise.then(function(currentUser) {
-            //     $scope.profile = currentUser.myProfile;
-            //     console.log('$scope.userid is: ' + JSON.stringify($scope.userid));
-            // });
+          Auth.getCurrentUser().$promise.then(function(currentUser) {
+          $scope.profile = currentUser.myProfile;
+          console.log('$scope.userid is: ' + JSON.stringify($scope.userid));
+        });
 
         $scope.isCollapsed = true;
         $scope.isLoggedIn = Auth.isLoggedIn;
