@@ -17,4 +17,4 @@ Project 4 while in the web immersive class at General Assembly
 <ul>Boostrap</ul>
 <ul>A little bit of love</ul>
 
-<h3>Visit our <a href="#">IndieSounds</a> live site</h3>
+<h3>Visit our <a href="http://indiesounds.heroku.com">IndieSounds</a> live site</h3>
